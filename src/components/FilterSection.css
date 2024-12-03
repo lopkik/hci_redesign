@@ -1,0 +1,4 @@
+.related-search-link[data-active="false"]:hover {
+  text-decoration: underline;
+  color: blue;
+}

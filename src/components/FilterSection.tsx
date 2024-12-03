@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Checkbox } from "./Checkbox";
 import { RangeInput } from "./RangeInput";
 
+import "./FilterSection.css";
+
 export const FilterSection = () => {
   const [isOneBedroom, setIsOneBedroom] = useState(false);
   const [isFurnished, setIsFurnished] = useState(false);
@@ -32,20 +34,24 @@ export const FilterSection = () => {
 
       <div style={{ padding: "1rem 0" }}>related searches</div>
       <div
+        className="related-search-link"
         onClick={() => setIsOneBedroom(true)}
         style={{
           fontWeight: isOneBedroom ? "bolder" : "normal",
           cursor: isOneBedroom ? "default" : "pointer",
         }}
+        data-active={isOneBedroom}
       >
         one bedroom apartments for rent
       </div>
       <div
+        className="related-search-link"
         onClick={() => setIsFurnished(true)}
         style={{
           fontWeight: isFurnished ? "bolder" : "normal",
           cursor: isFurnished ? "default" : "pointer",
         }}
+        data-active={isFurnished}
       >
         furnished apartments for rent
       </div>
