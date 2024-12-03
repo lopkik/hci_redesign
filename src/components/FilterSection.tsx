@@ -4,6 +4,7 @@ import { RangeInput } from "./RangeInput";
 
 export const FilterSection = () => {
   const [isOneBedroom, setIsOneBedroom] = useState(false);
+  const [isFurnished, setIsFurnished] = useState(false);
 
   return (
     <div style={{ padding: "1rem" }}>
@@ -17,7 +18,11 @@ export const FilterSection = () => {
 
       <Checkbox label="cats ok" />
       <Checkbox label="dogs ok" />
-      <Checkbox label="furnished" />
+      <Checkbox
+        label="furnished"
+        isFurnished={isFurnished}
+        setIsFurnished={setIsFurnished}
+      />
       <Checkbox label="no smoking" />
       <Checkbox label="wheelchair accessible" />
       <Checkbox label="air conditioning" />
@@ -28,9 +33,21 @@ export const FilterSection = () => {
       <div style={{ padding: "1rem 0" }}>related searches</div>
       <div
         onClick={() => setIsOneBedroom(true)}
-        style={{ fontWeight: isOneBedroom ? "bolder" : "normal" }}
+        style={{
+          fontWeight: isOneBedroom ? "bolder" : "normal",
+          cursor: isOneBedroom ? "default" : "pointer",
+        }}
       >
         one bedroom apartments for rent
+      </div>
+      <div
+        onClick={() => setIsFurnished(true)}
+        style={{
+          fontWeight: isFurnished ? "bolder" : "normal",
+          cursor: isFurnished ? "default" : "pointer",
+        }}
+      >
+        furnished apartments for rent
       </div>
     </div>
   );
